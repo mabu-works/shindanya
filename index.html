@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>診断メーカー | 名前で診断</title>
+<meta name="description" content="名前を入力すると今日の診断結果が出る、ブラウザ完結の診断メーカー。">
+<meta name="theme-color" content="#4f46e5">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="container">
+  <header class="app-header">
+    <div class="app-icon" aria-hidden="true">診</div>
+    <h1>診断メーカー</h1>
+    <p class="tagline">名前を入れると、今日のあなたを診断します。<br>同じ名前・同じ日なら、何度やっても同じ結果です。</p>
+  </header>
+
+  <section class="card">
+    <label class="field-label" for="nameInput">名前</label>
+    <input type="text" id="nameInput" placeholder="名前を入力してください" maxlength="20" autocomplete="off">
+    <div class="field-label theme-label">診断テーマ</div>
+    <div class="chips" id="themeChips" role="tablist" aria-label="診断テーマ"></div>
+    <button id="diagnoseBtn" class="primary-btn" type="button">診断する</button>
+    <p class="error" id="errorMsg" hidden>名前を入力してください。</p>
+  </section>
+
+  <section class="card result-card" id="resultCard" hidden>
+    <p class="result-theme" id="resultTheme"></p>
+    <h2 class="result-title" id="resultTitle"></h2>
+    <p class="result-for" id="resultFor"></p>
+    <p class="result-desc" id="resultDesc"></p>
+    <div class="actions">
+      <button id="downloadBtn" class="secondary-btn" type="button">結果カードを画像で保存</button>
+      <a id="shareLink" class="share-btn" href="#" target="_blank" rel="noopener">Xで共有する</a>
+    </div>
+  </section>
+
+  <canvas id="cardCanvas" width="1200" height="630" hidden></canvas>
+
+  <footer class="app-footer">
+    <p>結果は「名前＋今日の日付」から決まります。入力した名前は外部に送信されません。</p>
+  </footer>
+</main>
+<script src="app.js"></script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js").catch(() => {});
+  });
+}
+</script>
+</body>
+</html>
