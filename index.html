@@ -5,16 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>診断メーカー | 名前で診断</title>
 <meta name="description" content="名前を入力すると今日の診断結果が出る、ブラウザ完結の診断メーカー。">
-<meta name="theme-color" content="#4f46e5">
+<meta name="theme-color" content="#0a0f1c">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <link rel="icon" type="image/png" href="icons/icon-192.png">
+<script>
+try {
+  var savedTheme = localStorage.getItem("shindanya-theme");
+  if (savedTheme === "light" || savedTheme === "dark") {
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  }
+} catch (e) { /* テーマ保存が使えない環境ではダークを既定にする */ }
+</script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main class="container">
+<nav class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="#top">診断メーカー</a>
+    <span class="topbar-links">
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="テーマ切り替え">🌙</button>
+    </span>
+  </div>
+</nav>
+
+<main class="container" id="top">
   <header class="app-header">
     <div class="app-icon" aria-hidden="true">診</div>
+    <p class="eyebrow">SHINDAN MAKER</p>
     <h1>診断メーカー</h1>
     <p class="tagline">名前を入れると、今日のあなたを診断します。<br>同じ名前・同じ日なら、何度やっても同じ結果です。</p>
   </header>
