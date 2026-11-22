@@ -2,6 +2,9 @@
 
 名前を入力すると診断結果が出る、ブラウザ完結の静的Webサイトです。ビルド不要で、そのまま静的ホスティングに置けば動きます。
 
+🌐 公開先: [shindanya.vercel.app](https://shindanya.vercel.app)
+📜 更新履歴: [CHANGELOG.md](CHANGELOG.md)
+
 ## 📖 概要
 
 - 名前とテーマを選んで「診断する」を押すと結果が表示されます。
