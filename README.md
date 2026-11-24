@@ -37,6 +37,7 @@
 
 `windows/` フォルダに、同じ仕様の Windows アプリ（.NET 8 / WinForms）があります。診断ロジック（FNV-1aハッシュ＋mulberry32、シードは `名前|日付|テーマID`）と全6テーマ・48件の結果文は Web 版と同一で、同じ名前・同じ日なら Web 版と同じ結果になります。オフラインで使えます。
 
+- ダウンロード: [GitHub Releases（Windows版 v1.0.0）](https://github.com/mabu-works/shindanya/releases/tag/v1.0.0)
 - ビルド: `windows/build.bat`（Windows）または `windows/build.sh` で `windows/dist/Shindanya.exe` を生成
 - Web 版の「結果カードを画像で保存」「Xで共有する」の代わりに、結果テキストをクリップボードへコピーするボタンを付けています
 
