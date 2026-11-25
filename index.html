@@ -37,6 +37,7 @@ try {
     <p class="tagline">名前を入れると、今日のあなたを診断します。<br>同じ名前・同じ日なら、何度やっても同じ結果です。</p>
   </header>
 
+  <!-- 📝 診断入力 -->
   <section class="card">
     <label class="field-label" for="nameInput">名前</label>
     <input type="text" id="nameInput" placeholder="名前を入力してください" maxlength="20" autocomplete="off">
@@ -46,6 +47,7 @@ try {
     <p class="error" id="errorMsg" hidden>名前を入力してください。</p>
   </section>
 
+  <!-- 🏆 診断結果 -->
   <section class="card result-card" id="resultCard" hidden>
     <p class="result-theme" id="resultTheme"></p>
     <h2 class="result-title" id="resultTitle"></h2>

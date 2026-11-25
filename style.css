@@ -160,7 +160,7 @@ input[type="text"] {
 }
 :root[data-theme="light"] input[type="text"] { background: var(--panel); }
 input[type="text"]:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
-/* プレースホルダはブラウザ既定色だと薄くて読みにくいため、補助文字色で明示する（入力文字よりは弱く、両テーマでコントラスト4.5以上） */
+/* ✏️ プレースホルダはブラウザ既定色だと薄くて読みにくいため、補助文字色で明示する（入力文字よりは弱く、両テーマでコントラスト4.5以上） */
 input[type="text"]::placeholder { color: var(--muted); opacity: 1; }
 
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }

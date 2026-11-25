@@ -1,7 +1,9 @@
 "use strict";
 
-// ===== 決定的乱数（シード付き） =====
-// 文字列をハッシュ化する（FNV-1a）
+// ==========================================
+// 🎲 決定的乱数（シード付き）
+// ==========================================
+// 🔑 文字列をハッシュ化する（FNV-1a）
 function hashString(str) {
 let h = 0x811c9dc5;
 for (let i = 0; i < str.length; i++) {
@@ -11,7 +13,7 @@ h = Math.imul(h, 0x01000193);
 return h >>> 0;
 }
 
-// mulberry32: シードから再現可能な乱数を返す関数を作る
+// 🎲 mulberry32：シードから再現可能な乱数を返す関数を作る
 function mulberry32(seed) {
 let a = seed >>> 0;
 return function () {
@@ -30,7 +32,9 @@ const day = String(d.getDate()).padStart(2, "0");
 return `${y}-${m}-${day}`;
 }
 
-// ===== 診断データ =====
+// ==========================================
+// 📋 診断データ
+// ==========================================
 const THEMES = [
 {
 id: "weather",
@@ -124,7 +128,9 @@ results: [
 },
 ];
 
-// ===== UI =====
+// ==========================================
+// 🖥️ UI
+// ==========================================
 const nameInput = document.getElementById("nameInput");
 const chipsContainer = document.getElementById("themeChips");
 const diagnoseBtn = document.getElementById("diagnoseBtn");
@@ -188,7 +194,9 @@ nameInput.addEventListener("keydown", (e) => {
 if (e.key === "Enter") diagnose();
 });
 
-// ===== 結果カード（Canvas 1200×630） =====
+// ==========================================
+// 🖼️ 結果カード（Canvas 1200×630）
+// ==========================================
 function wrapText(ctx, text, maxWidth) {
 const lines = [];
 for (const paragraph of text.split("\n")) {
@@ -256,6 +264,9 @@ a.href = canvas.toDataURL("image/png");
 a.click();
 });
 
+// ------------------------------------------
+// 🌙 テーマ切り替え（ダーク既定＋ライト切替）
+// ------------------------------------------
 (function initTheme() {
   var root = document.documentElement;
   if (!root || !root.getAttribute || !root.setAttribute) return;

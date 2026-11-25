@@ -14,8 +14,8 @@ namespace Shindanya
         }
     }
 
-    // Web版（shindanya）の診断ロジックをそのまま再現する。
-    // シード = FNV-1a ハッシュ（名前|日付|テーマID）、乱数は mulberry32。
+    // 🔁 Web版（shindanya）の診断ロジックをそのまま再現する。
+    // 🎲 シード = FNV-1a ハッシュ（名前|日付|テーマID）、乱数は mulberry32。
     // 同じ名前・同じ日・同じテーマなら Web 版と同じ結果になる。
     internal sealed class DiagnosisData
     {
@@ -129,7 +129,7 @@ namespace Shindanya
             },
         };
 
-        // FNV-1a（Web版 hashString と同じ）
+        // 🔑 FNV-1a（Web版 hashString と同じ）
         public static uint HashString(string str)
         {
             uint h = 0x811c9dc5;
@@ -141,7 +141,7 @@ namespace Shindanya
             return h;
         }
 
-        // mulberry32（Web版と同じ決定的乱数）
+        // 🎲 mulberry32（Web版と同じ決定的乱数）
         public sealed class Mulberry32
         {
             private uint a;
