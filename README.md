@@ -2,8 +2,13 @@
 
 名前を入力すると診断結果が出る、ブラウザ完結の静的Webサイトです。ビルド不要で、そのまま静的ホスティングに置けば動きます。
 
-🌐 公開先: [shindanya.vercel.app](https://shindanya.vercel.app)
-📜 更新履歴: [CHANGELOG.md](CHANGELOG.md)
+| 項目 | 内容 |
+|---|---|
+| バージョン | –（日付管理） |
+| 状態 | 公開中 |
+| 公開先 | [shindanya.vercel.app](https://shindanya.vercel.app) |
+| 実装 | 静的 Web サイト（素の HTML / CSS / JavaScript、ビルド不要） |
+| 更新履歴 | [CHANGELOG.md](CHANGELOG.md) |
 
 ## 📖 概要
 
@@ -48,3 +53,15 @@
 - 結果カードはCanvas（1200×630）に描画し、PNGとしてダウンロードします。ファイル名は `shindan-<テーマID>-<日付>.png` です。
 - Service Worker（`sw.js`）：同一オリジンのGETをキャッシュ（キャッシュ名 `shindanya-v3`、stale-while-revalidate方式）。
 - テーマ（ダーク／ライト）は右上のボタンで切り替えでき、選択はlocalStorage（`shindanya-theme`）に保存されます。未保存時の既定はダークです。
+
+## 📁 ファイル構成
+
+```
+index.html            画面
+style.css             スタイル
+app.js                診断本体のロジック
+sw.js                 Service Worker
+manifest.webmanifest  PWA マニフェスト
+icons/                アイコン
+windows/              Windows 版（.NET 8 / WinForms）
+```
